@@ -17,3 +17,5 @@ commands:
   unnick:
   roundkick:
     aliases: [ rkick ]
+  undercoverban:
+    aliases: [ ucban ]
