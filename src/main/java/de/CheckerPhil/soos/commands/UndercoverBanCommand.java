@@ -3,7 +3,6 @@ package de.CheckerPhil.soos.commands;
 import de.CheckerPhil.soos.SoosSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,14 +11,14 @@ import org.bukkit.entity.Player;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class BanCommand implements CommandExecutor {
+public class UndercoverBanCommand implements CommandExecutor {
 
     private final SoosSystem plugin;
     String prefix = ChatColor.RED + ChatColor.BOLD.toString() + "| BAN | " + ChatColor.RESET;
 
-    public BanCommand(SoosSystem plugin) {
+    public UndercoverBanCommand(SoosSystem plugin) {
         this.plugin = plugin;
-        plugin.getCommand("ban").setExecutor(this);
+        plugin.getCommand("undercoverban").setExecutor(this);
     }
 
 
@@ -58,12 +57,6 @@ public class BanCommand implements CommandExecutor {
                 } else {
                     if (args[1].equalsIgnoreCase("HACKING") || args[1].equalsIgnoreCase("BUGUSING") || args[1].equalsIgnoreCase("SECURITY") || args[1].equalsIgnoreCase("ROLEPLAY") || args[1].equalsIgnoreCase("BANUMGEHUNG")) {
                         //if (args[0].equals(target)) {
-                        target.kickPlayer(ChatColor.RED + "You got banned."
-                                + "\n"
-                                + "Reason: " + ChatColor.YELLOW + args[1].toUpperCase()
-                                + "\n"
-                                + ChatColor.GRAY + "Write a ban appeal on " + ChatColor.DARK_AQUA + "https://discord.gg/n3DGWdfgDX" + ChatColor.GRAY + ".");
-
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banned", "true");
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banner", sender.getName());
                         plugin.getConfig().set("banned_players." + target.getUniqueId().toString() + ".reason", args[1].toUpperCase());
@@ -72,7 +65,7 @@ public class BanCommand implements CommandExecutor {
 
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             if (all.hasPermission("Bans.seeBans")) {
-                                all.sendMessage(prefix + sender.getName() + " banned " + target.getName() + "for" + args[1] + ".");
+                                all.sendMessage(prefix + sender.getName() + " banned " + target.getName() + " undercover for" + args[1] + ".");
                             }
                         }
                     }else{
@@ -84,12 +77,6 @@ public class BanCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.RED + "- ROLEPLAY");
                         sender.sendMessage(ChatColor.RED + "- BANUMGEHUNG");
 
-                        target.kickPlayer(ChatColor.RED + "You got banned."
-                                + "\n"
-                                + "Reason: " + ChatColor.YELLOW + "VIOLATION OF OUR TERMS OF SERVICES"
-                                + "\n"
-                                + ChatColor.GRAY + "Write a ban appeal on " + ChatColor.DARK_AQUA + "https://discord.gg/n3DGWdfgDX" + ChatColor.GRAY + ".");
-
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banned", "true");
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banner", sender.getName());
                         plugin.getConfig().set("banned_players." + target.getUniqueId().toString() + ".reason", "VIOLATION OF OUR TERMS OF SERVICES");
@@ -98,7 +85,7 @@ public class BanCommand implements CommandExecutor {
 
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             if (all.hasPermission("Bans.seeBans")) {
-                                all.sendMessage(prefix + sender.getName() + " banned " + target.getName() + "for" + args[1] + ".");
+                                all.sendMessage(prefix + sender.getName() + " banned " + target.getName() + " undercover for" + args[1] + ".");
                             }
                         }
                     }

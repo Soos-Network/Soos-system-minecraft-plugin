@@ -23,7 +23,7 @@ public class UnnickCommand implements CommandExecutor{
                     sender.sendMessage(prefix + ChatColor.RED + "Please use /nick <nickname>");
                 }
             }else {
-                sender.sendMessage(ChatColor.RED + "Your username should be the same as before, because you have no permissions to execute this command.");
+                sender.sendMessage(prefix + ChatColor.RED + "Your username should be the same as before, because you have no permissions to execute this command.");
             }
 
             return false;

@@ -25,6 +25,7 @@ public final class SoosSystem extends JavaPlugin {
         getCommand("unnick").setExecutor(new UnnickCommand());
         getCommand("roundkick").setExecutor(new RoundKickCommand());
         new BanCommand(this);
+        new UndercoverBanCommand(this);
         new PlayerJoin(this);
         new BanInfoCommand(this);
         new UnbanCommand(this);
