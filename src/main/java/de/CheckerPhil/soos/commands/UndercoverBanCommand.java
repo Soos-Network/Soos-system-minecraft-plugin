@@ -55,7 +55,7 @@ public class UndercoverBanCommand implements CommandExecutor {
                 if (target == sender) {
                     sender.sendMessage(prefix + "You can not ban yourself.");
                 } else {
-                    if (args[1].equalsIgnoreCase("HACKING") || args[1].equalsIgnoreCase("BUGUSING") || args[1].equalsIgnoreCase("SECURITY") || args[1].equalsIgnoreCase("ROLEPLAY") || args[1].equalsIgnoreCase("BANUMGEHUNG")) {
+                    if (args[1].equalsIgnoreCase("HACKING") || args[1].equalsIgnoreCase("BUGUSING") || args[1].equalsIgnoreCase("SECURITY") || args[1].equalsIgnoreCase("ROLEPLAY") || args[1].equalsIgnoreCase("BANUMGEHUNG") || args[1].equalsIgnoreCase("BEHAVIOR")) {
                         //if (args[0].equals(target)) {
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banned", "true");
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banner", sender.getName());
@@ -76,6 +76,7 @@ public class UndercoverBanCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.RED + "- SECURITY");
                         sender.sendMessage(ChatColor.RED + "- ROLEPLAY");
                         sender.sendMessage(ChatColor.RED + "- BANUMGEHUNG");
+                        sender.sendMessage(ChatColor.RED + "- BEHAVIOR");
 
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banned", "true");
                         plugin.getConfig().set("bannend_players." + target.getUniqueId().toString() + ".banner", sender.getName());

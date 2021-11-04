@@ -56,7 +56,7 @@ public class BanCommand implements CommandExecutor {
                 if (target == sender) {
                     sender.sendMessage(prefix + "You can not ban yourself.");
                 } else {
-                    if (args[1].equalsIgnoreCase("HACKING") || args[1].equalsIgnoreCase("BUGUSING") || args[1].equalsIgnoreCase("SECURITY") || args[1].equalsIgnoreCase("ROLEPLAY") || args[1].equalsIgnoreCase("BANUMGEHUNG")) {
+                    if (args[1].equalsIgnoreCase("HACKING") || args[1].equalsIgnoreCase("BUGUSING") || args[1].equalsIgnoreCase("SECURITY") || args[1].equalsIgnoreCase("ROLEPLAY") || args[1].equalsIgnoreCase("BANUMGEHUNG") || args[1].equalsIgnoreCase("BEHAVIOR")) {
                         //if (args[0].equals(target)) {
                         target.kickPlayer(ChatColor.RED + "You got banned."
                                 + "\n"
@@ -83,6 +83,7 @@ public class BanCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.RED + "- SECURITY");
                         sender.sendMessage(ChatColor.RED + "- ROLEPLAY");
                         sender.sendMessage(ChatColor.RED + "- BANUMGEHUNG");
+                        sender.sendMessage(ChatColor.RED + "- BEHAVIOR");
 
                         target.kickPlayer(ChatColor.RED + "You got banned."
                                 + "\n"
