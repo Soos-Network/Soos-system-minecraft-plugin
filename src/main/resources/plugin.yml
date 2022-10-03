@@ -2,7 +2,7 @@ name: SoosSystem
 author: CheckerPhil
 version: 1.0
 main: de.CheckerPhil.soos.SoosSystem
-api-version: 1.16
+api-version: 1.19
 commands:
   ping:
   report:
